@@ -31,6 +31,7 @@ export default class Server{
             console.log('Cliente Conectado');
 
             socket.desconectar(cliente);
+            socket.mensaje(cliente)
         })
 
     }
