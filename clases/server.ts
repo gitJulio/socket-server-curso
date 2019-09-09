@@ -11,7 +11,7 @@ export default class Server{
     public io:socketIO.Server;
     private httpServer: http.Server;
     private static _instance:Server;
-   
+
     private constructor(){
         this.app=express();
         this.port=SERVER_PORT;
@@ -32,6 +32,7 @@ export default class Server{
 
             socket.desconectar(cliente);
             socket.mensaje(cliente, this.io)
+            socket.configurarUsuario(cliente, this.io)
         })
 
     }
